@@ -1,6 +1,8 @@
 version: "3"
 services:
   app:
+    restart: "always"
+    tty: true
     build: .
     ports:
       - "5001:5000"
