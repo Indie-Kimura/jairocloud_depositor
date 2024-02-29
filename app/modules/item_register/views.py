@@ -1,21 +1,14 @@
 import base64
 import zipfile
-import io
 import os
 import shutil
-import time
 import uuid
 import requests
 import xml.etree.ElementTree as ET
 from flask import Flask, render_template, redirect, url_for, request, flash, session ,current_app, jsonify, Blueprint
 from flask_login import login_user, current_user, logout_user
-from flask_security import LoginForm, url_for_security
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField ,PasswordField
-from modules.config import MOCK_SHIB_DATA
-from modules.models import User as _User
-from modules.models import Affiliation_Id as _Affiliation_Id
-from modules.api import Affiliation_Repository, User
+from modules.models.api import Affiliation_Repository, User
 from .utils import dicttoxmlforsword # zip_folder
 from modules.grobid_client.grobid_client import GrobidClient
 

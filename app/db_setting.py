@@ -1,17 +1,12 @@
 import os
 
-from typing import NoReturn
 
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker, scoped_session
-from sqlalchemy.pool import QueuePool
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import MetaData, event, util
-from werkzeug.local import LocalProxy
-from werkzeug.utils import import_string
-
 HOST_NAME=os.environ.get("INVENIO_POSTGRESQL_HOST") #postgresql
 DBNAME=os.environ.get("INVENIO_POSTGRESQL_DBNAME") #invenio
 DBPASS=os.environ.get("INVENIO_POSTGRESQL_DBPASS") #dbpass123
